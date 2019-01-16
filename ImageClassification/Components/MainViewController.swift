@@ -14,7 +14,7 @@ import Vision
 import SnapKit
 
 class MainViewController : ViewController {
-  private let modelName:String = "ImageClassifier.mlmodel"
+  private let modelName:String = "ImageClassifier.mlmodel.gz"
   private let imageClassifier:ImageClassifier!  = ImageClassifier()
   private var currentImage:UIImage!             = nil
 
@@ -58,7 +58,6 @@ class MainViewController : ViewController {
         print("No model available")
         return
       }
-      
       self.imageClassifier.model = model
     }
   }
