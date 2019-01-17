@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39A1140021EF867600D81FED /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 39A113FF21EF867600D81FED /* ImageClassifier.mlmodel */; };
 		39A34D5521DE688C008B5181 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A34D5421DE688C008B5181 /* UIImage+Extension.swift */; };
 		39A34D5A21DFBC87008B5181 /* imageGalleryIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A34D5821DFBC87008B5181 /* imageGalleryIcon.png */; };
 		39A34D5B21DFBC87008B5181 /* takePhotoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A34D5921DFBC87008B5181 /* takePhotoIcon.png */; };
 		39A34D5D21DFBE66008B5181 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A34D5C21DFBE66008B5181 /* cameraIcon.png */; };
 		5B25370CFFAEDEEFF899897E /* Pods_ImageClassification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD799976F6EB2526733D5E88 /* Pods_ImageClassification.framework */; };
-		D7A2283C21D55E12002AEAF6 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D7A2283B21D55E12002AEAF6 /* ImageClassifier.mlmodel */; };
 		D7A2284021D5656A002AEAF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A2283F21D5656A002AEAF6 /* ViewController.swift */; };
 		D7E6B0C421C8418F0026C015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E6B0C321C8418F0026C015 /* AppDelegate.swift */; };
 		D7E6B0C921C841900026C015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E6B0C821C841900026C015 /* Assets.xcassets */; };
@@ -24,13 +24,13 @@
 /* Begin PBXFileReference section */
 		14ACA89748E200322B3BDD50 /* Pods-ImageRecognition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRecognition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageRecognition/Pods-ImageRecognition.debug.xcconfig"; sourceTree = "<group>"; };
 		27C741D47EA38A9E6AA672A8 /* Pods-ImageClassification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageClassification/Pods-ImageClassification.debug.xcconfig"; sourceTree = "<group>"; };
+		39A113FF21EF867600D81FED /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ImageClassifier.mlmodel; path = ../../../../../../../Downloads/ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		39A34D5421DE688C008B5181 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		39A34D5821DFBC87008B5181 /* imageGalleryIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageGalleryIcon.png; sourceTree = "<group>"; };
 		39A34D5921DFBC87008B5181 /* takePhotoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takePhotoIcon.png; sourceTree = "<group>"; };
 		39A34D5C21DFBE66008B5181 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
 		77C33E3066928897E40EB926 /* Pods-ImageRecognition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRecognition.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageRecognition/Pods-ImageRecognition.release.xcconfig"; sourceTree = "<group>"; };
 		AD799976F6EB2526733D5E88 /* Pods_ImageClassification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageClassification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7A2283B21D55E12002AEAF6 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		D7A2283F21D5656A002AEAF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D7E6B0C021C8418F0026C015 /* ImageClassification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageClassification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E6B0C321C8418F0026C015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				39A34D5C21DFBE66008B5181 /* cameraIcon.png */,
-				D7A2283B21D55E12002AEAF6 /* ImageClassifier.mlmodel */,
+				39A113FF21EF867600D81FED /* ImageClassifier.mlmodel */,
 				D7E6B0C821C841900026C015 /* Assets.xcassets */,
 				39A34D5821DFBC87008B5181 /* imageGalleryIcon.png */,
 				39A34D5921DFBC87008B5181 /* takePhotoIcon.png */,
@@ -231,7 +231,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ImageClassification/Pods-ImageClassification-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${PODS_ROOT}/Skafos/framework/Skafos.framework",
+				"${PODS_ROOT}/Skafos/frameworks/Skafos.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -279,8 +279,8 @@
 				D7E6B0C421C8418F0026C015 /* AppDelegate.swift in Sources */,
 				39A34D5521DE688C008B5181 /* UIImage+Extension.swift in Sources */,
 				D7E6B0DB21C846780026C015 /* MainViewController.swift in Sources */,
-				D7A2283C21D55E12002AEAF6 /* ImageClassifier.mlmodel in Sources */,
 				D7A2284021D5656A002AEAF6 /* ViewController.swift in Sources */,
+				39A1140021EF867600D81FED /* ImageClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
