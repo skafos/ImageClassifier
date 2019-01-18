@@ -64,5 +64,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
     Skafos.application(application, didReceiveRemoteNotification: userInfo)
   }
+
+  func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    Skafos.application(application, performFetchWithCompletionHandler: completionHandler)
+  }
+
+  func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+    Skafos.application(application, handleEventsForBackgroundURLSession: identifier, completionHandler: completionHandler)
+  }
 }
 
