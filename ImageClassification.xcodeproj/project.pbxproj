@@ -11,6 +11,7 @@
 		39A34D5A21DFBC87008B5181 /* imageGalleryIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A34D5821DFBC87008B5181 /* imageGalleryIcon.png */; };
 		39A34D5B21DFBC87008B5181 /* takePhotoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A34D5921DFBC87008B5181 /* takePhotoIcon.png */; };
 		39A34D5D21DFBE66008B5181 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A34D5C21DFBE66008B5181 /* cameraIcon.png */; };
+		39A6450A21F8F8AC003AA8DF /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 39A6450921F8F8AC003AA8DF /* ImageClassifier.mlmodel */; };
 		5B25370CFFAEDEEFF899897E /* Pods_ImageClassification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD799976F6EB2526733D5E88 /* Pods_ImageClassification.framework */; };
 		D7A2284021D5656A002AEAF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A2283F21D5656A002AEAF6 /* ViewController.swift */; };
 		D7E6B0C421C8418F0026C015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E6B0C321C8418F0026C015 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 		39A34D5821DFBC87008B5181 /* imageGalleryIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageGalleryIcon.png; sourceTree = "<group>"; };
 		39A34D5921DFBC87008B5181 /* takePhotoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takePhotoIcon.png; sourceTree = "<group>"; };
 		39A34D5C21DFBE66008B5181 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
+		39A6450921F8F8AC003AA8DF /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		77C33E3066928897E40EB926 /* Pods-ImageRecognition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRecognition.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageRecognition/Pods-ImageRecognition.release.xcconfig"; sourceTree = "<group>"; };
 		AD799976F6EB2526733D5E88 /* Pods_ImageClassification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageClassification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A2283F21D5656A002AEAF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		D7E6B0D421C8436C0026C015 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				39A6450921F8F8AC003AA8DF /* ImageClassifier.mlmodel */,
 				39A34D5C21DFBE66008B5181 /* cameraIcon.png */,
 				D7E6B0C821C841900026C015 /* Assets.xcassets */,
 				39A34D5821DFBC87008B5181 /* imageGalleryIcon.png */,
@@ -277,6 +280,7 @@
 				39A34D5521DE688C008B5181 /* UIImage+Extension.swift in Sources */,
 				D7E6B0DB21C846780026C015 /* MainViewController.swift in Sources */,
 				D7A2284021D5656A002AEAF6 /* ViewController.swift in Sources */,
+				39A6450A21F8F8AC003AA8DF /* ImageClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
