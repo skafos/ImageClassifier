@@ -14,7 +14,8 @@ import Vision
 import SnapKit
 
 class MainViewController : ViewController {
-  private let modelName:String = "ImageClassifier.mlmodel.gz"
+  // This will be the asset name you use in drag and drop on the dashboard
+  private let assetName:String                  = "ImageClassifier"
   private let imageClassifier:ImageClassifier!  = ImageClassifier()
   private var currentImage:UIImage!             = nil
 
@@ -24,44 +25,33 @@ class MainViewController : ViewController {
     self.photoButton.addTarget(self, action: #selector(photoAction(_:)), for: .touchUpInside)
     self.cameraButton.addTarget(self, action: #selector(cameraAction(_:)), for: .touchUpInside)
 
-//    let userDefined: [String: String] = imageClassifier.model.modelDescription.metadata[MLModelMetadataKey.creatorDefinedKey]! as! [String : String]
-//    print(userDefined)
-//    print(imageClassifier.model.modelDescription.metadata)
-
-    /**
-     Load Model From Download Cache
-     **/
-    
-    Skafos.load(self.modelName) { (model) in
-      guard let model = model else {
-        print("No model available")
-        return
-      }
-      self.imageClassifier.model = model
+    // Load Model From Download Cache
+    Skafos.load(asset: self.assetName) { (error, asset) in
+        guard let model = asset.model else {
+            debugPrint("No model available")
+            return
+        }
+        self.imageClassifier.model = model
     }
-
-    /***
-      Receive Notification When New Model Has Been Downloaded And Compiled
-     ***/
-    NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadModel(_:)), name: Skafos.Notifications.modelUpdateNotification(self.modelName), object: nil)
     
-    /** Receive Notifications for all model updates  **/
-//    NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadModel(_:)), name: Skafos.Notifications.modelUpdated, object: nil)
+    // Receive Notification When New Model Has Been Downloaded And Compiled
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(MainViewController.reloadModel(_:)),
+                                           name: Skafos.Notifications.assetUpdateNotification(assetName),
+                                           object: nil)
   }
 
-  
   @objc func reloadModel(_ notification:Notification) {
     debugPrint("Model Reloaded")
-    debugPrint(notification)
-    Skafos.load(self.modelName) { (model) in
-      guard let model = model else {
-        print("No model available")
+    Skafos.load(asset: self.assetName) { (error, asset) in
+      guard let model = asset.model else {
+        debugPrint("No model available")
         return
       }
       self.imageClassifier.model = model
     }
   }
-  
+    
   @objc
   func cameraAction(_ sender:Any? = nil) {
     let myPickerController = UIImagePickerController()
@@ -77,7 +67,7 @@ class MainViewController : ViewController {
     myPickerController.sourceType = .photoLibrary
     self.present(myPickerController, animated: true, completion: nil)
   }
-  
+
   func classifyImage(image:UIImage) {
     self.currentImage = image
     let orientation   = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue))!
@@ -99,15 +89,12 @@ class MainViewController : ViewController {
       }
     }
   }
-  
+
   func showClassification(message:String) {
-    
     let alertController = UIAlertController(title: "Classification", message: message, preferredStyle: .alert)
-    
     let previewImage = self.currentImage.imageWithSize(scaledToSize: CGSize(width: 150, height: 150))
     let customView = UIImageView(image: previewImage)
     alertController.view.addSubview(customView)
-    
     
     customView.snp.makeConstraints { make in
       make.top.equalToSuperview().offset(100)
@@ -129,7 +116,7 @@ class MainViewController : ViewController {
     
     alertController.addAction(action)
     
-    /** Save to Photo Library **/
+    // Save to Photo Library
     if let imagePicker = (self.presentedViewController as? UIImagePickerController) {
       if (imagePicker.sourceType == .camera) {
         let saveAction = UIAlertAction(title: "Save Image", style: .default) { (actionitem) in
@@ -168,8 +155,6 @@ class MainViewController : ViewController {
     }
   }
 }
-
-
 
 extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

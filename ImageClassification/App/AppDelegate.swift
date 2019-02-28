@@ -14,14 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     self.window                     = UIWindow(frame: UIScreen.main.bounds)
     self.window?.rootViewController = MainViewController()
 
-    // Skafos app key is required
-    Skafos.configure("<YOUR SKAFOS APP KEY>")
-    
+    // Skafos publishable key is required
+    // You can find it under "app settings" in your project on the Skafos dashboard
+    Skafos.initialize("<PUBLISHABLE KEY>")
+
     self.window?.makeKeyAndVisible()
     return true
   }
