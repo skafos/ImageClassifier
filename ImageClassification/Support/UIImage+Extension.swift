@@ -2,8 +2,8 @@
 //  UIImage+Extension.swift
 //  ImageClassification
 //
-//  Created by Kevin Musselman on 1/3/19.
-//  Copyright © 2019 Skafos. All rights reserved.
+//  Created by Skafos.ai on 1/3/19.
+//  Copyright © 2019 Metis Machine, LLC. All rights reserved.
 //
 
 import UIKit

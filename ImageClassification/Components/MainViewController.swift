@@ -2,8 +2,8 @@
 //  MainViewController.swift
 //  ImageClassification
 //
-//  Created by Wess Cope on 12/17/18.
-//  Copyright © 2018 Skafos. All rights reserved.
+//  Created by Skafos.ai on 12/17/18.
+//  Copyright © 2018 Metis Machine, LLC. All rights reserved.
 //
 
 import Foundation
