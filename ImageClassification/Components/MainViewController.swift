@@ -25,30 +25,41 @@ class MainViewController : ViewController {
     self.photoButton.addTarget(self, action: #selector(photoAction(_:)), for: .touchUpInside)
     self.cameraButton.addTarget(self, action: #selector(cameraAction(_:)), for: .touchUpInside)
 
-    // Load Model From Download Cache
-    Skafos.load(asset: self.assetName) { (error, asset) in
-        guard let model = asset.model else {
-            debugPrint("No model available")
-            return
-        }
-        self.imageClassifier.model = model
+    // Skafos load cached asset
+    // If you use a tag, Skafos will pull the asset on app load
+    Skafos.load(asset: assetName, tag: "latest") { (error, asset) in
+      // Log the asset in the console
+      console.info(asset)
+      guard error == nil else {
+        console.error("Skafos load asset error: \(String(describing: error))")
+        return
+      }
+      guard let model = asset.model else {
+        console.info("No model available in the asset")
+        return
+      }
+      // Assign model to the imageClassifier class
+      self.imageClassifier
     }
-    
-    // Receive Notification When New Model Has Been Downloaded And Compiled
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(MainViewController.reloadModel(_:)),
-                                           name: Skafos.Notifications.assetUpdateNotification(assetName),
-                                           object: nil)
+    /***
+     Listen for push noticiations and load the asset from the recieved payload
+     ***/
+    NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadModel(_:)), name: Skafos.Notifications.assetUpdateNotification(assetName), object: nil)
   }
 
   @objc func reloadModel(_ notification:Notification) {
-    debugPrint("Model Reloaded")
-    Skafos.load(asset: self.assetName) { (error, asset) in
-      guard let model = asset.model else {
-        debugPrint("No model available")
+    Skafos.load(asset: assetName) { (error, asset) in
+      console.info(asset)
+      guard error == nil else {
+        console.error("Skafos reload asset error: \(String(describing: error))")
         return
       }
-      self.imageClassifier.model = model
+      guard let model = asset.model else {
+        console.error("No model available in the asset")
+        return
+      }
+      // Assign model to the imageClassifier class
+      self.imageClassifier
     }
   }
     
