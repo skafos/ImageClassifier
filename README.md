@@ -1,5 +1,13 @@
 <h1 align="center">ImageClassification by <a href="https://skafos.ai">Skafos</a></h1>
 
+**DEPRECATION WARNING**
+
+This code example was intended for use by the legacy Skafos platform and is no longer being maintained. On 05/29/2019, a new version of [Skafos](https://skafos.ai) was released, streamlining model delivery to the edge.
+
+[Sign-up](https://dashboard.skafos.ai/sign-up) for an account, [join](https://join.slack.com/t/metismachine-skafos/shared_invite/enQtNTAxMzEwOTk2NzA5LThjMmMyY2JkNTkwNDQ1YjgyYjFiY2MyMjRkMzYyM2E4MjUxNTJmYmQyODVhZWM2MjQwMjE5ZGM1Y2YwN2M5ODI) our Slack community, and explore some [example models](https://github.com/skafos/colab-example-models) to get started.
+
+---
+
 ImageClassification is an example app that uses the Skafos platform for CoreML model integration and delivery. It's a good starting point for diving in, or a good reference for integrating Skafos in to your own app. Skafos is a platform that streamlines CoreML model updates without needing to submit a new version to the app store everytime a new model is ready for use.
 
 This ImageClassification example app specifically integrates and deploys an Image Classification machine learning model. [Image Classification](https://docs.metismachine.io/docs/image-classification) is a type of machine learning model that enables you to categorize images into groups, and identify new images as a member of one (or more) of these groups. The example model that is provided in this app will categorize any image as either a cat or a dog. For more details about how to use and customize this model please navigate to the [Skafos Turi Image Classifier repo on github](https://github.com/skafos/TuriImageClassifier).
